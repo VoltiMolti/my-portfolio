@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+  <body>
+<nav>
+  <a href="#services">Services</a>
+  <a href="#projects">Projects</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section>
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1>Volt's Portfolio</h1>
+      <p class="subtitle">Discord & Web Developer</p>
+      <p class="description">I build modern websites, custom Discord bots and clean Discord servers.</p>
+      <a href="#contact" class="btn">Contact Me</a>
+    </div>
+<div class="hero-visual">
+  <div class="glow-orb"></div>
+  <img src="logo.png" alt="Volt Logo" class="hero-logo">
+</div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <h2 class="section-heading">Services</h2>
+  <div class="card-row">
+    <div class="card">
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><path d="M21 11.5c0 4.14-4.03 7.5-9 7.5-1.06 0-2.08-.15-3.02-.43L3 20l1.3-3.9C3.47 14.9 3 13.25 3 11.5 3 7.36 7.03 4 12 4s9 3.36 9 7.5z"/></svg>
+      </div>
+      <h3>Discord Servers</h3>
+      <p>Professional Discord server setup with channels, roles, permissions, bots and a clean structure.</p>
+    </div>
+    <div class="card">
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="11" rx="2"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/><circle cx="9" cy="13.5" r="1"/><circle cx="15" cy="13.5" r="1"/></svg>
+      </div>
+      <h3>Custom Discord Bots</h3>
+      <p>Custom Discord bots built specifically for your server, including commands, moderation, automation and more.</p>
+    </div>
+    <div class="card">
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 4 5.5 4 9s-1.5 6.5-4 9c-2.5-2.5-4-5.5-4-9s1.5-6.5 4-9z"/></svg>
+      </div>
+      <h3>Websites</h3>
+      <p>Modern, responsive websites designed to look clean and professional on desktop and mobile.</p>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2 class="section-heading">Projects</h2>
+  <div class="card-row">
+    <div class="card project-card">
+      <div class="project-image">
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="1"/><path d="M3 8h18"/></svg>
+        <span>Preview Image</span>
+      </div>
+      <p class="project-category">Discord Setup</p>
+      <h3>Custom Discord Server</h3>
+      <p>A professionally structured Discord community with custom channels, roles, permissions and automated systems.</p>
+      <a href="#" class="view-project">View Project →</a>
+    </div>
+    <div class="card project-card">
+      <div class="project-image">
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="1"/><path d="M3 8h18"/></svg>
+        <span>Preview Image</span>
+      </div>
+      <p class="project-category">Web Development</p>
+      <h3>Portfolio Website</h3>
+      <p>A modern personal portfolio website built with a clean and responsive design.</p>
+      <a href="#" class="view-project">View Project →</a>
+    </div>
+    <div class="card project-card">
+      <div class="project-image">
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="1"/><path d="M3 8h18"/></svg>
+        <span>Preview Image</span>
+      </div>
+      <p class="project-category">Discord Bot</p>
+      <h3>Custom Discord Bot</h3>
+      <p>A custom Discord bot featuring useful commands, moderation tools and server automation.</p>
+      <a href="#" class="view-project">View Project →</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <h2 class="section-heading">About Me</h2>
+  <div class="about-content">
+    <div class="about-text">
+      <p>I'm Volt, a 15-year-old Discord & Web Developer focused on creating clean, modern and functional projects.</p>
+      <p>From custom Discord servers and bots to responsive websites, I build things with simplicity and attention to detail in mind.</p>
+      <p>I'm always learning, improving my skills and turning new ideas into projects. I enjoy bringing ideas to life and creating digital experiences that feel unique, polished and easy to use.</p>
+    </div>
+
+    <div class="about-highlights">
+      <div class="highlight-item">Discord Development</div>
+      <div class="highlight-item">Web Development</div>
+      <div class="highlight-item">Custom Solutions</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2 class="section-heading">Contact</h2>
+  <p class="contact-line"><strong>Discord:</strong> <a href="https://discord.com/users/1202567023058489358" target="_blank" class="btn contact-btn">mr_voltimolti</a></p>
+  <p class="contact-line"><strong>Email:</strong> <button class="btn contact-btn-outline" id="email-value" onclick="copyText('email-value')">volt.webdeveloper@gmail.com</button></p>
+  <p class="contact-note"><em>I usually respond within 24 hours. I'm looking forward to working with you!</em></p> </section>
+</section>
+
+<footer>
+  <p>© 2026 Volt. All rights reserved.</p>
+  <p>Discord • Email</p>
+</footer>
+
+  <script src="script.js"></script>
+  </body>
+</html>
