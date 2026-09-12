@@ -1,6 +1,9 @@
 const menuButton =
   document.getElementById("menu-button");
 
+const menuClose =
+  document.getElementById("menu-close");
+
 const sideMenu =
   document.getElementById("side-menu");
 
@@ -52,71 +55,76 @@ function closeMenu() {
 
 
 /* =========================
-   MENU BUTTON
+   MENU WIRING
+   (nur ausführen, wenn das Menü auf
+   der aktuellen Seite existiert)
 ========================= */
 
-menuButton.addEventListener(
-  "click",
-  () => {
+if (
+  menuButton &&
+  menuClose &&
+  sideMenu &&
+  menuOverlay
+) {
 
-    if (
-      sideMenu.classList.contains("active")
-    ) {
+  menuButton.addEventListener(
+    "click",
+    () => {
 
-      closeMenu();
+      if (
+        sideMenu.classList.contains("active")
+      ) {
 
-    } else {
+        closeMenu();
 
-      openMenu();
+      } else {
+
+        openMenu();
+
+      }
 
     }
-
-  }
-);
+  );
 
 
-/* =========================
-   CLOSE WHEN CLICKING LINK
-========================= */
-
-menuLinks.forEach(
-  link => {
-
-    link.addEventListener(
-      "click",
-      closeMenu
-    );
-
-  }
-);
+  menuClose.addEventListener(
+    "click",
+    closeMenu
+  );
 
 
-/* =========================
-   CLOSE OVERLAY
-========================= */
+  menuLinks.forEach(
+    link => {
 
-menuOverlay.addEventListener(
-  "click",
-  closeMenu
-);
-
-
-/* =========================
-   ESCAPE KEY
-========================= */
-
-document.addEventListener(
-  "keydown",
-  event => {
-
-    if (event.key === "Escape") {
-
-      closeMenu();
+      link.addEventListener(
+        "click",
+        closeMenu
+      );
 
     }
+  );
 
-  }
-);
+
+  menuOverlay.addEventListener(
+    "click",
+    closeMenu
+  );
+
+
+  document.addEventListener(
+    "keydown",
+    event => {
+
+      if (event.key === "Escape") {
+
+        closeMenu();
+
+      }
+
+    }
+  );
+
+}
 
 
 /* =========================
@@ -127,6 +135,10 @@ function copyText(id) {
 
   const element =
     document.getElementById(id);
+
+  if (!element) {
+    return;
+  }
 
   const text =
     element.innerText;
@@ -139,6 +151,7 @@ function copyText(id) {
 
       const originalText =
         element.innerText;
+
 
       element.innerText =
         "Copied!";
@@ -156,6 +169,7 @@ function copyText(id) {
 
     })
 
+
     .catch(() => {
 
       alert(
@@ -163,5 +177,75 @@ function copyText(id) {
       );
 
     });
+
+}
+
+
+/* =========================
+   IMAGE ZOOM (Click-to-enlarge)
+   Gilt für Hero-Bild (Project 1),
+   die 3-Bilder-Reihe (Project 1)
+   und die Project-2-Galerie.
+========================= */
+
+const zoomableImages = document.querySelectorAll(
+  ".project-featured-image, .project-gallery-row img, .project2-gallery-item img"
+);
+
+if (zoomableImages.length > 0) {
+
+  // Overlay-Element einmal erzeugen und ans Ende von <body> hängen
+
+  const overlay = document.createElement("div");
+  overlay.className = "img-zoom-overlay";
+
+  const overlayImg = document.createElement("img");
+  overlay.appendChild(overlayImg);
+
+  document.body.appendChild(overlay);
+
+
+  function openZoom(src, alt) {
+
+    overlayImg.src = src;
+    overlayImg.alt = alt || "";
+
+    overlay.classList.add("active");
+
+  }
+
+
+  function closeZoom() {
+
+    overlay.classList.remove("active");
+
+  }
+
+
+  zoomableImages.forEach(img => {
+
+    img.addEventListener("click", () => {
+
+      openZoom(img.src, img.alt);
+
+    });
+
+  });
+
+
+  // Klick auf das vergrößerte Bild oder den Hintergrund schließt wieder
+
+  overlay.addEventListener("click", closeZoom);
+
+
+  document.addEventListener("keydown", event => {
+
+    if (event.key === "Escape") {
+
+      closeZoom();
+
+    }
+
+  });
 
 }
